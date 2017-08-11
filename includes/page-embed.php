@@ -4,10 +4,24 @@ namespace HP\Page_Embed;
 
 add_action( 'init', 'HP\Page_Embed\add_shortcode' );
 
+/**
+ * Register the page_embed shortcode.
+ *
+ * @since 0.0.1
+ */
 function add_shortcode(){
 	\add_shortcode( 'page_embed', 'HP\Page_Embed\display_shortcode' );
 }
 
+/**
+ * Display the page_embed shortcode.
+ *
+ * @since 0.0.1
+ *
+ * @param array $atts List of attributes passed to the shortcode.
+ *
+ * @return string Content to display.
+ */
 function display_shortcode( $atts ) {
 	$default = array(
 		'id' => 0,
