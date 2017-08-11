@@ -1,4 +1,10 @@
 <?php
+/**
+ * Implement the page_embed shortcode.
+ *
+ * @package Page Embed
+ * @since 0.0.1
+ */
 
 namespace HP\Page_Embed;
 
@@ -9,7 +15,7 @@ add_action( 'init', 'HP\Page_Embed\add_shortcode' );
  *
  * @since 0.0.1
  */
-function add_shortcode(){
+function add_shortcode() {
 	\add_shortcode( 'page_embed', 'HP\Page_Embed\display_shortcode' );
 }
 
@@ -38,10 +44,6 @@ function display_shortcode( $atts ) {
 
 	if ( 0 === absint( $atts['id'] ) ) {
 		return '<!-- Invalid page entered, nothing to embed. -->';
-	}
-
-	if ( absint( $atts['id'] ) == get_post()->ID ) {
-		return '<!-- Cannot embed page in itself. -->';
 	}
 
 	$page = get_post( absint( $atts['id'] ) );
