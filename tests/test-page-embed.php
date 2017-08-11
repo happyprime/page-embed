@@ -21,7 +21,7 @@ class PageEmbedTest extends WP_UnitTestCase {
 			'post_content' => '[page_embed id=' . $embedded . ']',
 		) );
 
-		$page_content = apply_filters( 'the_content', get_post( $page )->post_content );
+		$page_content = trim( apply_filters( 'the_content', get_post( $page )->post_content ) );
 		$expected_content = '<p>This is my sample content.</p>';
 
 		$this->assertEquals( $expected_content, $page_content );
