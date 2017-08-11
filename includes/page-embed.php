@@ -98,6 +98,10 @@ function display_shortcode( $atts ) {
 
 	$content .= apply_filters( 'the_content', wp_kses_post( $page->post_content ) );
 
+	if ( ! empty( $container ) ) {
+		$content .= '</' . $container . '>';
+	}
+
 	if ( ! empty( $wrapper ) ) {
 		$content .= '</' . $wrapper . '>';
 	}
