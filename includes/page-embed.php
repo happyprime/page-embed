@@ -34,7 +34,7 @@ function display_shortcode( $atts ) {
 		'wrapper' => '',
 		'wrapper_id' => '',
 		'wrapper_class' => '',
-		'container' => 'div',
+		'container' => '',
 		'container_id' => '',
 		'container_class' => '',
 		'featured_image' => 'background',
